@@ -1,0 +1,19 @@
+.hr-list {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh + 100px);
+    width: 100vw;
+
+    padding: 64px 96px;
+
+    background: #596f0d;
+
+    color: white;
+    font-weight: normal;
+
+    gap: 16px;
+
+    align-items: center;
+    justify-content: center;
+
+}
