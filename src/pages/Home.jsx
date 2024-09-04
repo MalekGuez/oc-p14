@@ -9,9 +9,9 @@ const Home = () => {
   const [startDate, setStartDate] = useState('');
   const [street, setStreet] = useState('');
   const [city, setCity] = useState('');
-  const [state, setState] = useState('');
+  const [state, setState] = useState("AL");
   const [zip, setZip] = useState('');
-  const [department, setDepartment] = useState('');
+  const [department, setDepartment] = useState("Sales");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const { setFormData } = useContext(FormContext);
