@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Modal = ({ isOpen, onClose }) => {
     return (
         <div className={`modal ${isOpen ? 'modal--active' : ''}`}>
