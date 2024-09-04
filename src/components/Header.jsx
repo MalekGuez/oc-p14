@@ -14,7 +14,7 @@ const Header = () => {
         
         {location.pathname === '/list' ? (
         <NavLink to="/" className="hr-header__item">
-            Retour
+            Back
         </NavLink>) : (<NavLink to="/list" className="hr-header__item">
             View Employee List
         </NavLink>)}
