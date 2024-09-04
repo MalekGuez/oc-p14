@@ -42,7 +42,7 @@ const DataTable = () => {
         {
             columns,
             data,
-            initialState: { pageIndex: 0, pageSize: 5 } // initial page index and page size
+            initialState: { pageIndex: 0, pageSize: 5 }
         },
         useGlobalFilter,
         useSortBy,
@@ -52,7 +52,7 @@ const DataTable = () => {
     const { globalFilter, pageIndex, pageSize } = state;
 
     return (
-        <div class="datatable-container">
+        <div className="datatable-container">
             <div className="datatable-top">
                 <div className="input__container input__container--black">
                     <select
@@ -70,7 +70,7 @@ const DataTable = () => {
                     </select>
                 </div>
 
-                <div class="input__container input__container--black">
+                <div className="input__container input__container--black">
                     <input
                         type="text"
                         value={globalFilter || ''}
@@ -83,10 +83,10 @@ const DataTable = () => {
             
             <table {...getTableProps()}>
                 <thead>
-                    {headerGroups.map(headerGroup => (
-                        <tr {...headerGroup.getHeaderGroupProps()}>
-                            {headerGroup.headers.map(column => (
-                                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                    {headerGroups.map((headerGroup, index) => (
+                        <tr {...headerGroup.getHeaderGroupProps()} key={index}>
+                            {headerGroup.headers.map((column, index) => (
+                                <th {...column.getHeaderProps(column.getSortByToggleProps())} key={index}>
                                     {column.render('Header')}
                                     <span>
                                         {column.isSorted
@@ -101,12 +101,12 @@ const DataTable = () => {
                     ))}
                 </thead>
                 <tbody {...getTableBodyProps()}>
-                    {page.map(row => {
+                    {page.map((row, index) => {
                         prepareRow(row);
                         return (
-                            <tr {...row.getRowProps()}>
-                                {row.cells.map(cell => (
-                                    <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                            <tr {...row.getRowProps()} key={index}>
+                                {row.cells.map((cell, index) => (
+                                    <td {...cell.getCellProps()} key={index}>{cell.render('Cell')}</td>
                                 ))}
                             </tr>
                         );
